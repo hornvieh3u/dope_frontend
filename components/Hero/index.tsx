@@ -1,77 +1,51 @@
 "use client"
 
 import Link from "next/link";
-import { useState } from "react";
-import { toast } from "react-toastify";
-
-declare global {
-  interface Window {
-    ic: any;
-  }
-}
+import Transition, { ANIMATIONS } from "../Animation/Transition";
 
 const Hero = () => {
   
-  const [publicKey, setPublicKey] = useState("");
-  const connectWallet = async () => {
-
-    if (!window.ic || !window.ic.plug) {
-      toast("Please install PluginWallet.", { type: "warning" });
-      return;
-    }
-
-    try {
-      let res = await window.ic.plug.requestConnect();
-      setPublicKey(res);
-      console.log(res);
-      console.log(await window.ic.plug.isConnected());
-      toast("Connected Successfully.", { type: "success" });
-    } catch (error) {
-      toast("Connect Fail!", { type: "error" });
-      console.log(error);
-    }
-
-  }
-
   return (
     <>
       <section
         id="home"
         className="dark:bg-gray-dark relative z-10 overflow-hidden bg-white pb-16 pt-[120px] md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px] 2xl:pt-[210px]"
       >
-        <div className="container">
-          <div className="-mx-4 flex flex-wrap">
-            <div className="w-full px-4">
-              <div
-                className="wow fadeInUp mx-auto max-w-[800px] text-center"
-                data-wow-delay=".2s"
-              >
-                <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
-                  Trendy, Awesome, Cool
-                  <br/>
-                  DOPE
-                </h1>
-                <p className="dark:text-body-color-dark mb-12 text-base !leading-relaxed text-body-color sm:text-lg md:text-xl">
-                  DOPE is the token for OpenChat and Telegram airdrops.
-                </p>
-                <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-                  <Link
-                    href="https://info.icpswap.com/token/details/6yhds-zqaaa-aaaam-adisq-cai"
-                    className="rounded-sm bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
-                  >
-                    🔥 Token details
-                  </Link>
-                  <Link
-                    href="https://app.icpswap.com/swap?input=ryjl3-tyaaa-aaaaa-aaaba-cai&output=6yhds-zqaaa-aaaam-adisq-cai"
-                    className="inline-block rounded-sm bg-black px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-black/90 dark:bg-white/10 dark:text-white dark:hover:bg-white/5"
-                  >
-                    To the ICPSwap
-                  </Link>
+        <Transition animation={ANIMATIONS.T2B}>
+          <div className="container">
+            <div className="-mx-4 flex flex-wrap">
+              <div className="w-full px-4">
+                <div
+                  className="wow fadeInUp mx-auto max-w-[800px] text-center"
+                  data-wow-delay=".2s"
+                >
+                  <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
+                    Trendy, Awesome, Cool
+                    <br/>
+                    DOPE
+                  </h1>
+                  <p className="dark:text-body-color-dark mb-12 text-base !leading-relaxed text-body-color sm:text-lg md:text-xl">
+                    DOPE is the token for OpenChat and Telegram airdrops.
+                  </p>
+                  <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+                    <Link
+                      href="https://info.icpswap.com/token/details/6yhds-zqaaa-aaaam-adisq-cai"
+                      className="rounded-sm bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
+                    >
+                      🔥 Token details
+                    </Link>
+                    <Link
+                      href="https://app.icpswap.com/swap?input=ryjl3-tyaaa-aaaaa-aaaba-cai&output=6yhds-zqaaa-aaaam-adisq-cai"
+                      className="inline-block rounded-sm bg-black px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-black/90 dark:bg-white/10 dark:text-white dark:hover:bg-white/5"
+                    >
+                      To the ICPSwap
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </Transition>
         <div className="absolute right-0 top-0 z-[-1] opacity-30 lg:opacity-100">
           <svg
             width="450"

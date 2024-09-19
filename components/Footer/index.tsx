@@ -15,6 +15,7 @@ const Footer = () => {
               <div className="mb-12 max-w-[360px] lg:mb-16">
                 <Link href="/" className="mb-8 inline-block">
                   <Image
+                    priority={true}
                     src="/images/logo/logo-2.svg"
                     alt="logo"
                     className="dark:hidden"
@@ -22,6 +23,7 @@ const Footer = () => {
                     height={38}
                   />
                   <Image
+                    priority={true}
                     src="/images/logo/logo.svg"
                     alt="logo"
                     className="hidden dark:block"

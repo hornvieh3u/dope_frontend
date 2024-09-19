@@ -13,7 +13,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "DOPE Token Contract",
-  description: "This token can use on OpenChat and exchange with Toncoin for Telegram.",
+  description: "This token can be used on OpenChat and exchange with Toncoin for Telegram.",
   // other metadata
 };
 

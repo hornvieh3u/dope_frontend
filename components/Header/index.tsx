@@ -57,6 +57,7 @@ const Header = () => {
                 } `}
               >
                 <Image
+                  priority={true}
                   src="/images/logo/logo-2.svg"
                   alt="logo"
                   width={139}
@@ -64,6 +65,7 @@ const Header = () => {
                   className="dark:hidden"
                 />
                 <Image
+                  priority={true}
                   src="/images/logo/logo.svg"
                   alt="logo"
                   width={139}
