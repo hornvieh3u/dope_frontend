@@ -1,12 +1,9 @@
 # DOPE Token dApps
-- Install independencies
-  npm install
+- Install independencies - npm install
 
-- Start dApps
-  npm run dev
+- Start dApps - npm run dev
 
-- Build to deploy
-  npm run build
+- Build to deploy - npm run build
 
 # Claim and charge credit for mint DOPE token
 # Exchange and charge
